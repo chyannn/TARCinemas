@@ -1,38 +1,94 @@
 * {box-sizing: border-box;}
+
+/* Loading Custom Fonts */
+@font-face
+{
+    font-family: 'Tcfont-Regular';
+    src: url('/TARCINEMA/font/Bambino_W00_Regular.woff2') format('woff2'),       /* Super Modern Browsers */
+            url('/TARCINEMA/font/Bambino_W00_Regular.woff') format('woff'),      /* Pretty Modern Browsers */
+            url('/TARCINEMA/font/Bambino_W00_Regular.ttf') format('ttf');       /* Safari, Android, iOS */
+}
+@font-face
+{
+    font-family: 'Tcfont-Bold';
+    src: url('/TARCINEMA/font/Bambino_W00_Bold.woff2') format('woff2'),       /* Super Modern Browsers */
+            url('/TARCINEMA/font/Bambino_W00_Bold.woff') format('woff'),      /* Pretty Modern Browsers */
+            url('/TARCINEMA/font/Bambino_W00_Bold.ttf') format('ttf');       /* Safari, Android, iOS */
+}
+@font-face
+{
+    font-family: 'Tcfont-Black';
+    src: url('/TARCINEMA/font/Bambino_W00_Black.woff2') format('woff2'),       /* Super Modern Browsers */
+            url('/TARCINEMA/font/Bambino_W00_Black.woff') format('woff'),      /* Pretty Modern Browsers */
+            url('/TARCINEMA/font/Bambino_W00_Black.ttf') format('truetype');       /* Safari, Android, iOS */
+}
+@font-face
+{
+    font-family: 'Tcfont-Black-Italic';
+    src: url('/TARCINEMAA/font/Bambino_W00_Black_Italic.woff2') format('woff2'),       /* Super Modern Browsers */
+            url('/TARCINEMA/font/Bambino_W00_Black_Italic.woff') format('woff'),      /* Pretty Modern Browsers */
+            url('/TARCINEMA/font/Bambino_W00_Black_Italic.ttf') format('truetype');       /* Safari, Android, iOS */
+} 
+
+
 /* header design */
 header {
     text-align: left;
-    font-weight: bold;
-    font-size: 25px ;
     padding: 10px;
-    background-color: #dfe1ff;
-    color: #cddc7a;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #d9ff00;
+    font-family: 'Tcfont-Black';
+    padding: 0.5%;
+    margin: auto;
 }
 
 body {
-  background-color: #212112;
+  background-color: #0c0c09;
   margin: 0 auto ;
   width: 100%;
   max-width: auto;
 	min-width: 640px;
+  padding: 1%;
+}
+
+.logo_nav {
+  background-color: #212112;
+  overflow: hidden;
+  font-family: 'Tcfont-Black';
+  color: #ffffff;
+  width: 100%;
+}
+
+.signin-button {
+  float: right;
+  list-style-type: none;
+  text-decoration: none;
+  text-align: center;
+  margin: auto;
+  padding: 15px 0 15px 0;
+  display: block;
+  width: 10%;
+  background-color: #d9ff00;
+  color: #0c0c09;
+  border-radius: 20px;
 }
 
 /*navigation bar & dropdown menu*/
 .topnav {
   background-color: #212112;
+  font-family: 'Tcfont-Black';
   overflow: hidden;
   color: #ffffff;
-
   width: 100%;
+
 }
 
 ul {
   list-style-type: none;
+  text-decoration: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333333;
+  background-color: #0c0c09;;
 }
 
 li {
@@ -41,24 +97,22 @@ li {
 
 .topnav a, .dropbtn {
   display: inline-block;
-  color: white;
+  color: rgb(255, 253, 253);
   text-align: center;
   padding: 25px 25px 25px 25px;
   text-decoration: none;
 }
 
-.topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #f5f181;
+.topnav a:hover, .dropdown:hover, .dropbtn {
+  color: #fff700;
 }
 
 .topnav a:hover {
-  background-color: #f5f181;
-  color: rgb(56, 56, 77);
+  color: #fff700;
 }
 
 .topnav a.active {
-  background-color: #aaaa26;
-  color: white;
+  color: #fff700;
 }
 
 .topnav .icon {
@@ -100,14 +154,14 @@ li.dropdown {
 .dropdown-content {
   display: none;
   position: absolute; /*fix the navigation bar to prevent dropdown menu extend it*/
-  background-color: #f9f9f9;
+  color: #f9f9f9;
   min-width: 150px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: black;
+  color: rgb(255, 255, 255);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -115,160 +169,138 @@ li.dropdown {
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  color: #ffe600;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
+.topnav input[type=text] {
+  float: right;
+  background-color: #212112;
+  width: 100%;
+  height: 20px;
+  color: #ccc;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: right;
+    display: block;
+    text-align: left;
+    width: 50%;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+
+
 /* Header - TAR Cinemas Logo Design */
 .logo_header
 {
     font-family: "Tcfont-Black";
+    text-decoration: none;
     color: #ffffff;
-    font-size: 100%;
+    font-size: 200%;
 }
 
 span
 {
     font-family: "Tcfont-Black-Italic";
-    color: #bab112;
-}
-
-main {
-  width: 1000px;
-  height: 500px;
-}
-
-/*Livebot*/
-#chatbot-icon {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  cursor: pointer;
-}
-
-#chat-container {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 300px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  display: none;
-  background-color: white;
-}
-
-#chat-messages {
-  height: 200px;
-  overflow: auto;
-  border-bottom: 1px solid #ccc;
-}
-
-#user-input {
-  width: 80%;
-  padding: 5px;
-  margin-right: 5px;
-}
-
-#send-button {
-  padding: 5px 10px;
+    color: #fff200;
 }
 
 
-/* aboutuscontactus */
-.contactabout{
-	margin-bottom:60px;
-	font-size: 18px;
-	padding-left: 80px;
-	padding-top:15px ;
-	padding-bottom: 15px;
-	background-color: #050503;
-	color: #f1eba7;
-}
-.contactabout a{
-	text-decoration: none;
-	color: #f1eba7;
-}
-.contactabout a:hover{
-	text-decoration: underline;
-	font-weight: bold;
-	color: #f1eba7;
-}
-.cusaus{
-	font-weight: bold;
-	font-size: 25px;
-}
-.aboutus table{
-	float: left;
-	width: 750px;
-	height: 250px;
-	margin-right: 70px;
-	border-style: none;
-	border-right-style: solid;
-	border-color: #f1eba7;
-}
-.contactus table{
-	width: 450px;
-	height: 250px;
-	border-style: none;
-}
-.contactdetail{
-	padding-right: 40px;
-}
-
-/* footer */
-footer 
-{
-  display: block;
-  margin-top: 50px;
-  padding: 0px;
-  text-align: center;
-  font-size: 20px;
-  color: #262c09;
-}
-
-hr.footer_start {
-  border: 4px solid #262c09;
-}
-
-.footer {
-  color: #f1eba7;
+/* Position the image container (needed to position the left and right arrows) */
+.slideshow_container {
+  margin: auto;
+  max-width: 1000px;
+  max-height: 10%;
   position: relative;
+}
+
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Poster */
+.poster_container {
+  position: relative;
+  width: 50%;
+  max-width: 20%;
+  float: left;
+}
+
+.poster {
+  opacity: 1;
+  display: block;
   width: 100%;
-  text-align: center;
-  height: 100%;
-  bottom: 0;
-  background-color: #050503;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
-.footer h2 {
-  text-align: center;
-  padding-top: 25px;
-  padding-bottom: 15px;
-  font-size: 18px;
-  font-weight: bold;
-}
-.footer a {
-  font-size: 14px;
-  font-weight: normal;
-  padding: auto ;
-  color: #f1eba7;
-}
-.footer h3 {
+
+.movies_info {
+  transition: .5s ease;
+  opacity: 0;
   position: absolute;
-  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  float: left;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 15px;
-  bottom: 0;
-  padding: auto ;
 }
-.footer img {
-  position: absolute;
-  left: 55px;
-  top: 50px;
-  width: 250px;
+
+.poster_container:hover .poster {
+  opacity: 0.3;
 }
-.footer a:visited {
-  color: black;
+
+.poster_container:hover .info {
+  opacity: 1;
 }
+
+.info {
+  background-color: #f2ff00;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+
+
